@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pacientes>
+    <paciente>
+        <nombre>Fernando Maccio</nombre>
+        <tipoAtencion>Emergencia</tipoAtencion>
+    </paciente>
+    <paciente>
+        <nombre>Franco Manfredi</nombre>
+        <tipoAtencion>Control General</tipoAtencion>
+    </paciente>
+    <paciente>
+        <nombre>Facundo Rosales</nombre>
+        <tipoAtencion>Odontologia</tipoAtencion>
+    </paciente>
+    <paciente>
+        <nombre>Otro</nombre>
+        <tipoAtencion>Analisis Clinico</tipoAtencion>
+    </paciente>
+</pacientes>
