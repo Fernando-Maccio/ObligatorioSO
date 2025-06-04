@@ -4,6 +4,7 @@
         <nombre>Fernando Maccio</nombre>
         <tipoAtencion>Emergencia</tipoAtencion>
         <horaLlegada>08:00</horaLlegada>
+        <prioridadInicial>1</prioridadInicial>
     </paciente>
     <paciente>
         <nombre>Franco Manfredi</nombre>
@@ -24,6 +25,7 @@
         <nombre>Lucía Vargas</nombre>
         <tipoAtencion>Emergencia</tipoAtencion>
         <horaLlegada>08:15</horaLlegada>
+        <prioridadInicial>2</prioridadInicial>
     </paciente>
     <paciente>
         <nombre>Martín Gómez</nombre>
@@ -44,6 +46,7 @@
         <nombre>Laura Silva</nombre>
         <tipoAtencion>Emergencia</tipoAtencion>
         <horaLlegada>09:00</horaLlegada>
+        <prioridadInicial>2</prioridadInicial>
     </paciente>
     <paciente>
         <nombre>Nicolás López</nombre>
@@ -64,6 +67,7 @@
         <nombre>Ramiro Ortega</nombre>
         <tipoAtencion>Emergencia</tipoAtencion>
         <horaLlegada>09:00</horaLlegada>
+        <prioridadInicial>1</prioridadInicial>
     </paciente>
     <paciente>
         <nombre>Sofía Álvarez</nombre>
@@ -84,6 +88,7 @@
         <nombre>Gabriela Funes</nombre>
         <tipoAtencion>Emergencia</tipoAtencion>
         <horaLlegada>10:30</horaLlegada>
+        <prioridadInicial>3</prioridadInicial>
     </paciente>
     <paciente>
         <nombre>Leandro Díaz</nombre>
@@ -104,6 +109,7 @@
         <nombre>Mario López</nombre>
         <tipoAtencion>Emergencia</tipoAtencion>
         <horaLlegada>08:15</horaLlegada>
+        <prioridadInicial>2</prioridadInicial>
     </paciente>
     <paciente>
         <nombre>Romina Ayala</nombre>
@@ -124,6 +130,7 @@
         <nombre>Oscar Albornoz</nombre>
         <tipoAtencion>Emergencia</tipoAtencion>
         <horaLlegada>11:00</horaLlegada>
+        <prioridadInicial>1</prioridadInicial>
     </paciente>
     <paciente>
         <nombre>Paula Suárez</nombre>
@@ -144,6 +151,7 @@
         <nombre>Luis Cabrera</nombre>
         <tipoAtencion>Emergencia</tipoAtencion>
         <horaLlegada>13:00</horaLlegada>
+        <prioridadInicial>3</prioridadInicial>
     </paciente>
     <paciente>
         <nombre>Marcela Quiroga</nombre>
@@ -164,6 +172,7 @@
         <nombre>Marta Sosa</nombre>
         <tipoAtencion>Emergencia</tipoAtencion>
         <horaLlegada>14:00</horaLlegada>
+        <prioridadInicial>2</prioridadInicial>
     </paciente>
     <paciente>
         <nombre>Cristian Romero</nombre>
@@ -184,6 +193,7 @@
         <nombre>Esteban Ledesma</nombre>
         <tipoAtencion>Emergencia</tipoAtencion>
         <horaLlegada>15:00</horaLlegada>
+        <prioridadInicial>1</prioridadInicial>
     </paciente>
     <paciente>
         <nombre>Valeria Gómez</nombre>
@@ -204,6 +214,7 @@
         <nombre>Joaquín Vera</nombre>
         <tipoAtencion>Emergencia</tipoAtencion>
         <horaLlegada>16:30</horaLlegada>
+        <prioridadInicial>1</prioridadInicial>
     </paciente>
     <paciente>
         <nombre>Milagros Ortega</nombre>
@@ -224,6 +235,7 @@
         <nombre>Bruno Salazar</nombre>
         <tipoAtencion>Emergencia</tipoAtencion>
         <horaLlegada>19:00</horaLlegada>
+        <prioridadInicial>3</prioridadInicial>
     </paciente>
     <paciente>
         <nombre>Lucía Peralta</nombre>

@@ -8,6 +8,7 @@ import org.w3c.dom.*;
 import javax.xml.parsers.*;
 import java.io.File;
 import java.io.IOException;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import org.xml.sax.SAXException;
 
@@ -42,12 +43,19 @@ public class Recepcionista {
                     Element elemento = (Element) nodo;
                     String nombre = elemento.getElementsByTagName("nombre").item(0).getTextContent();
                     String tipoAtencion = elemento.getElementsByTagName("tipoAtencion").item(0).getTextContent();
+                    String horaLlegada = elemento.getElementsByTagName("horaLlegada").item(0).getTextContent();
+                    String prioridadInicial = "1";
 
+                    NodeList nodos = elemento.getElementsByTagName("prioridadInicial");
+                    if (nodos.getLength() > 0 && nodos.item(0) != null) {
+                        prioridadInicial = nodos.item(0).getTextContent();
+                    }
+                    
                     switch (tipoAtencion) {
-                        case "Emergencia" -> emergencias.add(new Paciente(nombre, 1, 15));
-                        case "Control General" -> consultas.add(new Paciente(nombre, 1, 5));
-                        case "Odontologia" -> consultas.add(new Paciente(nombre, 1, 0));
-                        case "Analisis Clinico" -> consultas.add(new Paciente(nombre, 1, 10));
+                        case "Emergencia" -> emergencias.add(new Paciente(nombre, LocalTime.parse(horaLlegada), Integer.parseInt(prioridadInicial), 15));
+                        case "Control General" -> consultas.add(new Paciente(nombre, LocalTime.parse(horaLlegada), 1, 5));
+                        case "Odontologia" -> consultas.add(new Paciente(nombre, LocalTime.parse(horaLlegada), 1, 0));
+                        case "Analisis Clinico" -> consultas.add(new Paciente(nombre, LocalTime.parse(horaLlegada), 1, 10));
                         default -> System.out.println("Tipo de atencion inválido");
                     }
                 }

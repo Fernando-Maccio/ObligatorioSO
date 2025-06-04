@@ -4,18 +4,22 @@
  */
 package com.mycompany.obligatorioso;
 
+import java.time.LocalTime;
+
 /**
  *
  * @author fernandomaccio
  */
 public class Paciente extends Thread {
     private final String nombre;
+    private final LocalTime horaLlegada;
     private int prioridad;
     private final int tiempoAtencion;
     
     
-    public Paciente(String nombre, int prioridad, int tiempoAtencion) {
+    public Paciente(String nombre, LocalTime horaLlegada,int prioridad, int tiempoAtencion) {
         this.nombre = nombre;
+        this.horaLlegada = horaLlegada;
         this.prioridad = prioridad;
         this.tiempoAtencion = tiempoAtencion;
     }
