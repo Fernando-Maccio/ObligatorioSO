@@ -8,6 +8,7 @@ import org.w3c.dom.*;
 import javax.xml.parsers.*;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import org.xml.sax.SAXException;
 
 /**
@@ -15,8 +16,11 @@ import org.xml.sax.SAXException;
  * @author fernandomaccio
  */
 public class Recepcionista {
-    public void abrirCentro(){
-    try {
+    public Object[] abrirCentro(){
+        ArrayList<Thread> emergencias = new ArrayList<>();
+        ArrayList<Thread> consultas = new ArrayList<>();
+        
+        try {
             File archivo = new File("pacientes.xml");
 
             DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
@@ -35,14 +39,28 @@ public class Recepcionista {
                     String nombre = elemento.getElementsByTagName("nombre").item(0).getTextContent();
                     String tipoAtencion = elemento.getElementsByTagName("tipoAtencion").item(0).getTextContent();
 
-                    Thread paciente = new Paciente(nombre, 1, 1);
-
-                    paciente.start();
+                    switch (tipoAtencion) {
+                        case "Emergencia":
+                            emergencias.add(new Paciente(nombre, 1, 1));
+                            break;
+                        case "Control General":
+                            consultas.add(new Paciente(nombre, 1, 1));
+                            break;
+                        case "Odontologia":
+                            consultas.add(new Paciente(nombre, 1, 1));
+                            break;
+                        case "Analisis Clinico":
+                            consultas.add(new Paciente(nombre, 1, 1));
+                            break;
+                        default:
+                            System.out.println("Tipo de atencion inválido");
+                    }
                 }
             }
-
         } catch (IOException | ParserConfigurationException | DOMException | SAXException e) {
-            System.out.println("Algo salio mal");
+            System.out.println("No se pudo leer el archivo");
         }
+        
+        return new Object[]{emergencias, consultas};
     }
 }
