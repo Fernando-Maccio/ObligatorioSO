@@ -9,5 +9,9 @@ package com.mycompany.obligatorioso;
  * @author fernandomaccio
  */
 public class Medico {
+    private final String nombre;
     
+    public Medico(String nombre){
+        this.nombre = nombre;
+    }
 }

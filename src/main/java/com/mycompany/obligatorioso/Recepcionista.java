@@ -19,6 +19,10 @@ public class Recepcionista {
     public Object[] abrirCentro(){
         ArrayList<Thread> emergencias = new ArrayList<>();
         ArrayList<Thread> consultas = new ArrayList<>();
+        ArrayList<Medico> medicos = new ArrayList<>();
+        ArrayList<Enfermero> enfermeros = new ArrayList<>();
+        medicos.add(new Medico("nombre medico"));
+        enfermeros.add(new Enfermero("nombre enfermero"));
         
         try {
             File archivo = new File("pacientes.xml");
@@ -40,20 +44,11 @@ public class Recepcionista {
                     String tipoAtencion = elemento.getElementsByTagName("tipoAtencion").item(0).getTextContent();
 
                     switch (tipoAtencion) {
-                        case "Emergencia":
-                            emergencias.add(new Paciente(nombre, 1, 1));
-                            break;
-                        case "Control General":
-                            consultas.add(new Paciente(nombre, 1, 1));
-                            break;
-                        case "Odontologia":
-                            consultas.add(new Paciente(nombre, 1, 1));
-                            break;
-                        case "Analisis Clinico":
-                            consultas.add(new Paciente(nombre, 1, 1));
-                            break;
-                        default:
-                            System.out.println("Tipo de atencion inválido");
+                        case "Emergencia" -> emergencias.add(new Paciente(nombre, 1, 15));
+                        case "Control General" -> consultas.add(new Paciente(nombre, 1, 5));
+                        case "Odontologia" -> consultas.add(new Paciente(nombre, 1, 0));
+                        case "Analisis Clinico" -> consultas.add(new Paciente(nombre, 1, 10));
+                        default -> System.out.println("Tipo de atencion inválido");
                     }
                 }
             }
@@ -61,6 +56,6 @@ public class Recepcionista {
             System.out.println("No se pudo leer el archivo");
         }
         
-        return new Object[]{emergencias, consultas};
+        return new Object[]{ medicos, enfermeros, emergencias, consultas };
     }
 }
