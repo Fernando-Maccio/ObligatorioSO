@@ -5,6 +5,7 @@
 package com.mycompany.obligatorioso;
 
 import java.time.LocalTime;
+import java.util.concurrent.Semaphore;
 
 /**
  *

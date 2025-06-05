@@ -17,14 +17,10 @@ import org.xml.sax.SAXException;
  * @author fernandomaccio
  */
 public class Recepcionista {
+    ArrayList<Thread> emergencias = new ArrayList<>();
+    ArrayList<Thread> consultas = new ArrayList<>();
+    
     public Object[] abrirCentro(){
-        ArrayList<Thread> emergencias = new ArrayList<>();
-        ArrayList<Thread> consultas = new ArrayList<>();
-        ArrayList<Medico> medicos = new ArrayList<>();
-        ArrayList<Enfermero> enfermeros = new ArrayList<>();
-        medicos.add(new Medico("nombre medico"));
-        enfermeros.add(new Enfermero("nombre enfermero"));
-        
         try {
             File archivo = new File("pacientes.xml");
 
@@ -64,6 +60,6 @@ public class Recepcionista {
             System.out.println("No se pudo leer el archivo");
         }
         
-        return new Object[]{ medicos, enfermeros, emergencias, consultas };
+        return new Object[]{ emergencias, consultas };
     }
 }
