@@ -4,6 +4,7 @@
 
 package com.mycompany.obligatorioso;
 
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.concurrent.Semaphore;
 
@@ -12,6 +13,7 @@ import java.util.concurrent.Semaphore;
  * @author fernandomaccio
  */
 public class ObligatorioSO {
+    public static LocalTime horaActual = LocalTime.of(8, 0);
     public static ArrayList<Medico> medicos = new ArrayList<>();
     public static ArrayList<Enfermero> enfermeros = new ArrayList<>();
     public static Semaphore semaforoMedicos;
@@ -24,17 +26,22 @@ public class ObligatorioSO {
         medicos.add(new Medico("nombre medico"));
         enfermeros.add(new Enfermero("nombre enfermero"));
         
-        ObligatorioSO.semaforoMedicos = new Semaphore(medicos.size());
-        ObligatorioSO.semaforoEnfermeros  = new Semaphore(enfermeros.size());
+        semaforoMedicos = new Semaphore(medicos.size());
+        semaforoEnfermeros  = new Semaphore(enfermeros.size());
         
         ArrayList<Thread> emergencias = (ArrayList<Thread>) atenciones[0];
         ArrayList<Thread> consultas = (ArrayList<Thread>) atenciones[1];
         
-        for (Thread emergencia : emergencias) {
-            emergencia.start();
-        }
-        for (Thread consulta : consultas) {
-            consulta.start();
+        while(!emergencias.isEmpty() || !consultas.isEmpty()) {
+            if(!emergencias.isEmpty()) {
+                Thread paciente = emergencias.getFirst();
+                paciente.start();
+                emergencias.removeFirst();
+            } else {
+                Thread paciente = consultas.getFirst();
+                paciente.start();
+                consultas.removeFirst();
+            }
         }
     }
 }

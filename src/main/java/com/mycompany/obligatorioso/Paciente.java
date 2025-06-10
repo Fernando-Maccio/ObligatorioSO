@@ -4,8 +4,12 @@
  */
 package com.mycompany.obligatorioso;
 
+import static com.mycompany.obligatorioso.ObligatorioSO.horaActual;
+import static com.mycompany.obligatorioso.ObligatorioSO.semaforoEnfermeros;
+import static com.mycompany.obligatorioso.ObligatorioSO.semaforoMedicos;
 import java.time.LocalTime;
-import java.util.concurrent.Semaphore;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -31,6 +35,16 @@ public class Paciente extends Thread {
 
     @Override
     public void run() {
-        System.out.println("[" + nombre + "] finalizado.");
+        try {
+            semaforoMedicos.acquire();
+            semaforoEnfermeros.acquire();
+            Thread.sleep(500);
+            horaActual = horaActual.plusMinutes(tiempoAtencion);
+            System.out.println("[" + nombre + "] finalizado a las " + horaActual + "");
+            semaforoMedicos.release();
+            semaforoEnfermeros.release();
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Paciente.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }
