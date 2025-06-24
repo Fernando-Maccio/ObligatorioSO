@@ -24,8 +24,8 @@ import org.xml.sax.SAXException;
  */
 public class Recepcionista {
 
-    ArrayList<Paciente> emergencias = new ArrayList<>();
-    ArrayList<Paciente> consultas = new ArrayList<>();
+    private final ArrayList<Paciente> emergencias = new ArrayList<>();
+    private final ArrayList<Paciente> consultas = new ArrayList<>();
 
     public void abrirCentro() {
         try {
@@ -96,13 +96,25 @@ public class Recepcionista {
                     p.aumentarPrioridad();
                 }
             }
+            if(p.getPrioridad() == 6) {
+                colaEmergencias.add(p);
+            }
         });
+        colaConsultas.removeIf(p -> p.getPrioridad() == 6);
         
         emergencias.forEach(p -> {
-            if (p.getHoraLlegada().equals(horaActual)) colaEmergencias.add(p);
+            if (p.getHoraLlegada().equals(horaActual)) {
+                if (p.getTiempoAtencion() == 0) {
+                    System.out.println(p.getNombre() + " enviado al odontologo");
+                } else colaEmergencias.add(p);
+            }
         });
         consultas.forEach(p -> {
-            if (p.getHoraLlegada().equals(horaActual)) colaConsultas.add(p);
+            if (p.getHoraLlegada().equals(horaActual)) {
+                if (p.getTiempoAtencion() == 0) {
+                    System.out.println(p.getNombre() + " enviado al odontologo");
+                } else colaConsultas.add(p);
+            }
         });
         
         semaforoTomandoPaciente.acquire();

@@ -18,7 +18,7 @@ public class ObligatorioSO {
     public static ArrayList<Enfermero> enfermeros = new ArrayList<>();
     public static Recepcionista recepcionista = new Recepcionista();
     public static Semaphore semaforoTomandoPaciente = new Semaphore(1);
-    public static Semaphore semaforoMedicos;
+    public static Semaphore semaforoConsultorios = new Semaphore(1);
     public static Semaphore semaforoEnfermeros;
     public static ArrayList<Paciente> colaEmergencias = new ArrayList<>();
     public static ArrayList<Paciente> colaConsultas = new ArrayList<>();
@@ -26,10 +26,11 @@ public class ObligatorioSO {
     public static void main(String[] args) throws InterruptedException {
         recepcionista.abrirCentro();
         
-        medicos.add(new Medico("nombre medico"));
-        enfermeros.add(new Enfermero("nombre enfermero"));
+        medicos.add(new Medico("primer medico"));
+        medicos.add(new Medico("segundo medico"));
+        enfermeros.add(new Enfermero("primer enfermero"));
+        enfermeros.add(new Enfermero("segundo enfermero"));
         
-        semaforoMedicos  = new Semaphore(medicos.size());
         semaforoEnfermeros  = new Semaphore(enfermeros.size());
         
         for (Medico medico : medicos) {
@@ -40,6 +41,18 @@ public class ObligatorioSO {
             System.out.println(horaActual);
             Thread.sleep(500);
             horaActual = horaActual.plusMinutes(5);
+            if (horaActual.equals(LocalTime.of(14, 0))) {
+                medicos = new ArrayList<>();
+                enfermeros = new ArrayList<>();
+                medicos.add(new Medico("tercer medico"));
+                medicos.add(new Medico("cuarto medico"));
+                enfermeros.add(new Enfermero("tercer enfermero"));
+                enfermeros.add(new Enfermero("cuarto enfermero"));
+                
+                for (Medico medico : medicos) {
+                    medico.start();
+                }
+            }
         }
     }
 }
