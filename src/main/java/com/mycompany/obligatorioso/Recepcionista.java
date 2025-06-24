@@ -4,12 +4,18 @@
  */
 package com.mycompany.obligatorioso;
 
+import static com.mycompany.obligatorioso.ObligatorioSO.colaConsultas;
+import static com.mycompany.obligatorioso.ObligatorioSO.colaEmergencias;
+import static com.mycompany.obligatorioso.ObligatorioSO.horaActual;
+import static com.mycompany.obligatorioso.ObligatorioSO.semaforoEnfermeros;
+import static com.mycompany.obligatorioso.ObligatorioSO.semaforoTomandoPaciente;
 import org.w3c.dom.*;
 import javax.xml.parsers.*;
 import java.io.File;
 import java.io.IOException;
 import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.Comparator;
 import org.xml.sax.SAXException;
 
 /**
@@ -17,10 +23,11 @@ import org.xml.sax.SAXException;
  * @author fernandomaccio
  */
 public class Recepcionista {
-    ArrayList<Thread> emergencias = new ArrayList<>();
-    ArrayList<Thread> consultas = new ArrayList<>();
-    
-    public Object[] abrirCentro(){
+
+    ArrayList<Paciente> emergencias = new ArrayList<>();
+    ArrayList<Paciente> consultas = new ArrayList<>();
+
+    public void abrirCentro() {
         try {
             File archivo = new File("pacientes.xml");
 
@@ -46,20 +53,76 @@ public class Recepcionista {
                     if (nodos.getLength() > 0 && nodos.item(0) != null) {
                         prioridadInicial = nodos.item(0).getTextContent();
                     }
-                    
+
                     switch (tipoAtencion) {
-                        case "Emergencia" -> emergencias.add(new Paciente(nombre, LocalTime.parse(horaLlegada), Integer.parseInt(prioridadInicial), 15));
-                        case "Control General" -> consultas.add(new Paciente(nombre, LocalTime.parse(horaLlegada), 1, 5));
-                        case "Odontologia" -> consultas.add(new Paciente(nombre, LocalTime.parse(horaLlegada), 1, 0));
-                        case "Analisis Clinico" -> consultas.add(new Paciente(nombre, LocalTime.parse(horaLlegada), 1, 10));
-                        default -> System.out.println("Tipo de atencion inválido");
+                        case "Emergencia" ->
+                            emergencias.add(new Paciente(nombre, LocalTime.parse(horaLlegada), Integer.parseInt(prioridadInicial), 15));
+                        case "Control General" ->
+                            consultas.add(new Paciente(nombre, LocalTime.parse(horaLlegada), 1, 5));
+                        case "Odontologia" ->
+                            consultas.add(new Paciente(nombre, LocalTime.parse(horaLlegada), 1, 0));
+                        case "Analisis Clinico" ->
+                            consultas.add(new Paciente(nombre, LocalTime.parse(horaLlegada), 1, 10));
+                        default ->
+                            System.out.println("Tipo de atencion inválido");
                     }
                 }
             }
         } catch (IOException | ParserConfigurationException | DOMException | SAXException e) {
             System.out.println("No se pudo leer el archivo");
         }
+    }
+
+    public void ingresarPacientes() throws InterruptedException {
+        colaEmergencias.forEach(p -> {
+            if (p.getHoraLlegada().getMinute() % 10 == 0) {
+                if(horaActual.getMinute() % 10 == 0) {
+                    p.aumentarPrioridad();
+                }
+            } else {
+                if(horaActual.getMinute() % 10 != 0) {
+                    p.aumentarPrioridad();
+                }
+            }
+        });
         
-        return new Object[]{ emergencias, consultas };
+        colaConsultas.forEach(p -> {
+            if (p.getHoraLlegada().getMinute() % 10 == 0) {
+                if(horaActual.getMinute() % 10 == 0) {
+                    p.aumentarPrioridad();
+                }
+            } else {
+                if(horaActual.getMinute() % 10 != 0) {
+                    p.aumentarPrioridad();
+                }
+            }
+        });
+        
+        emergencias.forEach(p -> {
+            if (p.getHoraLlegada().equals(horaActual)) colaEmergencias.add(p);
+        });
+        consultas.forEach(p -> {
+            if (p.getHoraLlegada().equals(horaActual)) colaConsultas.add(p);
+        });
+        
+        semaforoTomandoPaciente.acquire();
+        colaEmergencias.sort(Comparator.comparingInt(Paciente::getPrioridad).reversed());
+        colaConsultas.sort(Comparator.comparingInt(Paciente::getPrioridad).reversed());
+        semaforoTomandoPaciente.release();
+    }
+    
+    public Paciente getPaciente() throws InterruptedException {
+        Paciente pacienteActual = null;
+        semaforoTomandoPaciente.acquire();
+        if(!colaEmergencias.isEmpty()){
+            pacienteActual = colaEmergencias.getFirst();
+            colaEmergencias.removeFirst();
+        } else if(!colaConsultas.isEmpty()) {
+            pacienteActual = colaConsultas.getFirst();
+            colaConsultas.removeFirst();
+        }
+        semaforoTomandoPaciente.release();
+        
+        return pacienteActual;
     }
 }

@@ -4,18 +4,13 @@
  */
 package com.mycompany.obligatorioso;
 
-import static com.mycompany.obligatorioso.ObligatorioSO.horaActual;
-import static com.mycompany.obligatorioso.ObligatorioSO.semaforoEnfermeros;
-import static com.mycompany.obligatorioso.ObligatorioSO.semaforoMedicos;
 import java.time.LocalTime;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
  * @author fernandomaccio
  */
-public class Paciente extends Thread {
+public class Paciente {
     private final String nombre;
     private final LocalTime horaLlegada;
     private int prioridad;
@@ -29,22 +24,23 @@ public class Paciente extends Thread {
         this.tiempoAtencion = tiempoAtencion;
     }
     
-    public void setPrioridad(int nuevaPrioridad) {
-        this.prioridad = nuevaPrioridad;
+    public String getNombre() {
+        return nombre;
     }
-
-    @Override
-    public void run() {
-        try {
-            semaforoMedicos.acquire();
-            semaforoEnfermeros.acquire();
-            Thread.sleep(500);
-            horaActual = horaActual.plusMinutes(tiempoAtencion);
-            System.out.println("[" + nombre + "] finalizado a las " + horaActual + "");
-            semaforoMedicos.release();
-            semaforoEnfermeros.release();
-        } catch (InterruptedException ex) {
-            Logger.getLogger(Paciente.class.getName()).log(Level.SEVERE, null, ex);
-        }
+    
+    public LocalTime getHoraLlegada(){
+        return horaLlegada;
+    }
+    
+    public int getPrioridad() {
+        return prioridad;
+    }
+    
+    public void aumentarPrioridad() {
+        this.prioridad += 1;
+    }
+    
+    public int getTiempoAtencion() {
+        return tiempoAtencion;
     }
 }

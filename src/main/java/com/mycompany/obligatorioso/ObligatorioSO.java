@@ -16,32 +16,30 @@ public class ObligatorioSO {
     public static LocalTime horaActual = LocalTime.of(8, 0);
     public static ArrayList<Medico> medicos = new ArrayList<>();
     public static ArrayList<Enfermero> enfermeros = new ArrayList<>();
+    public static Recepcionista recepcionista = new Recepcionista();
+    public static Semaphore semaforoTomandoPaciente = new Semaphore(1);
     public static Semaphore semaforoMedicos;
     public static Semaphore semaforoEnfermeros;
+    public static ArrayList<Paciente> colaEmergencias = new ArrayList<>();
+    public static ArrayList<Paciente> colaConsultas = new ArrayList<>();
 
-    public static void main(String[] args) {
-        Recepcionista recepcionista = new Recepcionista();
-        Object[] atenciones = recepcionista.abrirCentro();
+    public static void main(String[] args) throws InterruptedException {
+        recepcionista.abrirCentro();
         
         medicos.add(new Medico("nombre medico"));
         enfermeros.add(new Enfermero("nombre enfermero"));
         
-        semaforoMedicos = new Semaphore(medicos.size());
+        semaforoMedicos  = new Semaphore(medicos.size());
         semaforoEnfermeros  = new Semaphore(enfermeros.size());
         
-        ArrayList<Thread> emergencias = (ArrayList<Thread>) atenciones[0];
-        ArrayList<Thread> consultas = (ArrayList<Thread>) atenciones[1];
-        
-        while(!emergencias.isEmpty() || !consultas.isEmpty()) {
-            if(!emergencias.isEmpty()) {
-                Thread paciente = emergencias.getFirst();
-                paciente.start();
-                emergencias.removeFirst();
-            } else {
-                Thread paciente = consultas.getFirst();
-                paciente.start();
-                consultas.removeFirst();
-            }
+        for (Medico medico : medicos) {
+            medico.start();
+        }
+        while(horaActual.isBefore(LocalTime.of(20, 0))) {
+            recepcionista.ingresarPacientes();
+            System.out.println(horaActual);
+            Thread.sleep(500);
+            horaActual = horaActual.plusMinutes(5);
         }
     }
 }
