@@ -4,8 +4,13 @@
  */
 package com.mycompany.obligatorioso;
 
+import static com.mycompany.obligatorioso.ObligatorioSO.enfermeros;
 import static com.mycompany.obligatorioso.ObligatorioSO.horaActual;
+import static com.mycompany.obligatorioso.ObligatorioSO.semaforoEnfermeros;
+import static com.mycompany.obligatorioso.ObligatorioSO.semaforoSalaEnfermeria;
 import java.time.LocalTime;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -14,6 +19,7 @@ import java.time.LocalTime;
 public class Enfermero extends Thread {
     private final String nombre;
     private LocalTime horaEntrada;
+    private boolean atendiendo = false;
     
     public Enfermero(String nombre){
         this.nombre = nombre;
@@ -21,8 +27,33 @@ public class Enfermero extends Thread {
     
     @Override
     public void run() {
-        while(horaActual.isBefore(horaEntrada.plusHours(6))) {
-            System.out.println("No se pudo leer el archivo");
+        horaEntrada = horaActual;
+        System.out.println("Comenzo a trabajar: " + nombre);
+        while(horaActual.isBefore(horaEntrada.plusHours(6)) || atendiendo) {
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(Enfermero.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
+        System.out.println("Termino de trabajar: " + nombre);
+        enfermeros.remove(this);
+    }
+    
+    public String getNombre() {
+        return nombre;
+    }
+    
+    public void atender(Paciente pacienteActual, LocalTime horaFinAtencion) throws InterruptedException {
+        semaforoSalaEnfermeria.acquire();
+        atendiendo = true;
+        while(horaActual.isBefore(horaFinAtencion)){
+            Thread.sleep(100);
+        }
+        System.out.println("El enfermero " + nombre + " termino de atender a " + pacienteActual.getNombre() + " a las " + horaActual.toString());
+        enfermeros.add(this);
+        semaforoEnfermeros.release();
+        atendiendo = false;
+        semaforoSalaEnfermeria.release();
     }
 }

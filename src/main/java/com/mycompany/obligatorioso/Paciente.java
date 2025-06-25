@@ -14,14 +14,33 @@ public class Paciente {
     private final String nombre;
     private final LocalTime horaLlegada;
     private int prioridad;
+    private final String tipoAtencion;
     private final int tiempoAtencion;
+    private final boolean informeOdontologico;
     
     
-    public Paciente(String nombre, LocalTime horaLlegada,int prioridad, int tiempoAtencion) {
+    public Paciente(String nombre, LocalTime horaLlegada,int prioridad, String tipoAtencion, boolean informeOdontologico) {
         this.nombre = nombre;
         this.horaLlegada = horaLlegada;
         this.prioridad = prioridad;
-        this.tiempoAtencion = tiempoAtencion;
+        this.tipoAtencion = tipoAtencion;
+        int tmpTiempoAtencion = 0;
+        switch (tipoAtencion) {
+            case "Emergencia" ->
+                tmpTiempoAtencion = 15;
+            case "Control General" ->
+                tmpTiempoAtencion = 5;
+            case "Odontologia" ->
+                tmpTiempoAtencion = 0;
+            case "Analisis Clinico" ->
+                tmpTiempoAtencion = 10;
+            case "Carnet de Salud" ->
+                tmpTiempoAtencion = 10;
+            default ->
+                System.out.println("Tipo de atencion inválido");
+        }
+        this.tiempoAtencion = tmpTiempoAtencion;
+        this.informeOdontologico = informeOdontologico;
     }
     
     public String getNombre() {
@@ -40,7 +59,15 @@ public class Paciente {
         this.prioridad += 1;
     }
     
+    public String getTipoAtencion() {
+        return tipoAtencion;
+    }
+    
     public int getTiempoAtencion() {
         return tiempoAtencion;
+    }
+    
+    public boolean hasInformeOdontologico() {
+        return informeOdontologico;
     }
 }

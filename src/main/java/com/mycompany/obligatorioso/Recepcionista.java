@@ -7,7 +7,6 @@ package com.mycompany.obligatorioso;
 import static com.mycompany.obligatorioso.ObligatorioSO.colaConsultas;
 import static com.mycompany.obligatorioso.ObligatorioSO.colaEmergencias;
 import static com.mycompany.obligatorioso.ObligatorioSO.horaActual;
-import static com.mycompany.obligatorioso.ObligatorioSO.semaforoEnfermeros;
 import static com.mycompany.obligatorioso.ObligatorioSO.semaforoTomandoPaciente;
 import org.w3c.dom.*;
 import javax.xml.parsers.*;
@@ -48,24 +47,19 @@ public class Recepcionista {
                     String tipoAtencion = elemento.getElementsByTagName("tipoAtencion").item(0).getTextContent();
                     String horaLlegada = elemento.getElementsByTagName("horaLlegada").item(0).getTextContent();
                     String prioridadInicial = "1";
+                    boolean informeOdontologico = false;
 
-                    NodeList nodos = elemento.getElementsByTagName("prioridadInicial");
-                    if (nodos.getLength() > 0 && nodos.item(0) != null) {
-                        prioridadInicial = nodos.item(0).getTextContent();
+                    NodeList nodosPrioridadInicial = elemento.getElementsByTagName("prioridadInicial");
+                    if (nodosPrioridadInicial.getLength() > 0 && nodosPrioridadInicial.item(0) != null) {
+                        prioridadInicial = nodosPrioridadInicial.item(0).getTextContent();
                     }
-
-                    switch (tipoAtencion) {
-                        case "Emergencia" ->
-                            emergencias.add(new Paciente(nombre, LocalTime.parse(horaLlegada), Integer.parseInt(prioridadInicial), 15));
-                        case "Control General" ->
-                            consultas.add(new Paciente(nombre, LocalTime.parse(horaLlegada), 1, 5));
-                        case "Odontologia" ->
-                            consultas.add(new Paciente(nombre, LocalTime.parse(horaLlegada), 1, 0));
-                        case "Analisis Clinico" ->
-                            consultas.add(new Paciente(nombre, LocalTime.parse(horaLlegada), 1, 10));
-                        default ->
-                            System.out.println("Tipo de atencion inválido");
+                    
+                    NodeList nodosInformeOdontologico = elemento.getElementsByTagName("informeOdontologico");
+                    if (nodosInformeOdontologico.getLength() > 0 && nodosInformeOdontologico.item(0) != null) {
+                        informeOdontologico = Boolean.parseBoolean(nodosInformeOdontologico.item(0).getTextContent());
                     }
+                    
+                    emergencias.add(new Paciente(nombre, LocalTime.parse(horaLlegada), Integer.parseInt(prioridadInicial), tipoAtencion, informeOdontologico));
                 }
             }
         } catch (IOException | ParserConfigurationException | DOMException | SAXException e) {
@@ -104,14 +98,14 @@ public class Recepcionista {
         
         emergencias.forEach(p -> {
             if (p.getHoraLlegada().equals(horaActual)) {
-                if (p.getTiempoAtencion() == 0) {
+                if ("Odontologia".equals(p.getTipoAtencion())) {
                     System.out.println(p.getNombre() + " enviado al odontologo");
                 } else colaEmergencias.add(p);
             }
         });
         consultas.forEach(p -> {
             if (p.getHoraLlegada().equals(horaActual)) {
-                if (p.getTiempoAtencion() == 0) {
+                if ("Odontologia".equals(p.getTipoAtencion())) {
                     System.out.println(p.getNombre() + " enviado al odontologo");
                 } else colaConsultas.add(p);
             }

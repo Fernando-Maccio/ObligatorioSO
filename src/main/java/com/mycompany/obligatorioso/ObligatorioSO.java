@@ -18,7 +18,8 @@ public class ObligatorioSO {
     public static ArrayList<Enfermero> enfermeros = new ArrayList<>();
     public static Recepcionista recepcionista = new Recepcionista();
     public static Semaphore semaforoTomandoPaciente = new Semaphore(1);
-    public static Semaphore semaforoConsultorios = new Semaphore(1);
+    public static Semaphore semaforoConsultorios = new Semaphore(2);
+    public static Semaphore semaforoSalaEnfermeria = new Semaphore(1);
     public static Semaphore semaforoEnfermeros;
     public static ArrayList<Paciente> colaEmergencias = new ArrayList<>();
     public static ArrayList<Paciente> colaConsultas = new ArrayList<>();
@@ -27,14 +28,15 @@ public class ObligatorioSO {
         recepcionista.abrirCentro();
         
         medicos.add(new Medico("primer medico"));
-        medicos.add(new Medico("segundo medico"));
         enfermeros.add(new Enfermero("primer enfermero"));
-        enfermeros.add(new Enfermero("segundo enfermero"));
         
         semaforoEnfermeros  = new Semaphore(enfermeros.size());
         
         for (Medico medico : medicos) {
             medico.start();
+        }
+        for (Enfermero enfermero : enfermeros) {
+            enfermero.start();
         }
         while(horaActual.isBefore(LocalTime.of(20, 0))) {
             recepcionista.ingresarPacientes();
@@ -45,12 +47,13 @@ public class ObligatorioSO {
                 medicos = new ArrayList<>();
                 enfermeros = new ArrayList<>();
                 medicos.add(new Medico("tercer medico"));
-                medicos.add(new Medico("cuarto medico"));
                 enfermeros.add(new Enfermero("tercer enfermero"));
-                enfermeros.add(new Enfermero("cuarto enfermero"));
                 
                 for (Medico medico : medicos) {
                     medico.start();
+                }
+                for (Enfermero enfermero : enfermeros) {
+                    enfermero.start();
                 }
             }
         }

@@ -4,11 +4,12 @@
  */
 package com.mycompany.obligatorioso;
 
+import static com.mycompany.obligatorioso.ObligatorioSO.enfermeros;
 import static com.mycompany.obligatorioso.ObligatorioSO.horaActual;
 import static com.mycompany.obligatorioso.ObligatorioSO.recepcionista;
 import static com.mycompany.obligatorioso.ObligatorioSO.semaforoConsultorios;
+import static com.mycompany.obligatorioso.ObligatorioSO.semaforoEnfermeros;
 import java.time.LocalTime;
-import java.util.concurrent.Semaphore;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -31,13 +32,26 @@ public class Medico extends Thread {
         while(horaActual.isBefore(horaEntrada.plusHours(6))) {
             try {
                 semaforoConsultorios.acquire();
+                semaforoEnfermeros.acquire();
                 Paciente pacienteActual = recepcionista.getPaciente();
                 if(pacienteActual != null) {
                     LocalTime horaFinAtencion = horaActual.plusMinutes(pacienteActual.getTiempoAtencion());
-                    while(horaActual.isBefore(horaFinAtencion)){
-                        Thread.sleep(100);
+                    if ("Analisis Clinico".equals(pacienteActual.getTipoAtencion())) {
+                        Enfermero enfermeroActual = enfermeros.removeFirst();
+                        enfermeroActual.atender(pacienteActual, horaFinAtencion);
+                    } else {
+                        if("Carnet de Salud".equals(pacienteActual.getTipoAtencion()) && !pacienteActual.hasInformeOdontologico()) {
+                            System.out.println(pacienteActual.getNombre() + " no trajo informe odontologico");
+                        } else {
+                            while(horaActual.isBefore(horaFinAtencion)){
+                                Thread.sleep(100);
+                            }
+                            System.out.println("El medico " + nombre + " termino de atender a " + pacienteActual.getNombre() + " a las " + horaActual.toString());
+                        }
+                        semaforoEnfermeros.release();
                     }
-                    System.out.println("se termino de atender a " + pacienteActual.getNombre() + " a las " + horaActual.toString());
+                } else {
+                    semaforoEnfermeros.release();
                 }
                 semaforoConsultorios.release();
             } catch (InterruptedException ex) {

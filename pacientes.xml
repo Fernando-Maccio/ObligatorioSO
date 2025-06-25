@@ -252,4 +252,32 @@
         <tipoAtencion>Analisis Clinico</tipoAtencion>
         <horaLlegada>20:00</horaLlegada>
     </paciente>
+    <paciente>
+        <nombre>Elena Martínez</nombre>
+        <tipoAtencion>Carnet de Salud</tipoAtencion>
+        <horaLlegada>08:45</horaLlegada>
+        <informeOdontologico>True</informeOdontologico>
+    </paciente>
+    <paciente>
+        <nombre>Diego Fernández</nombre>
+        <tipoAtencion>Carnet de Salud</tipoAtencion>
+        <horaLlegada>10:15</horaLlegada>
+        <informeOdontologico>False</informeOdontologico>
+    </paciente>
+    <paciente>
+        <nombre>Camila Ríos</nombre>
+        <tipoAtencion>Carnet de Salud</tipoAtencion>
+        <horaLlegada>11:45</horaLlegada>
+    </paciente>
+    <paciente>
+        <nombre>Juanita López</nombre>
+        <tipoAtencion>Carnet de Salud</tipoAtencion>
+        <horaLlegada>13:00</horaLlegada>
+        <informeOdontologico>True</informeOdontologico>
+    </paciente>
+    <paciente>
+        <nombre>Iván Cabrera</nombre>
+        <tipoAtencion>Carnet de Salud</tipoAtencion>
+        <horaLlegada>15:30</horaLlegada>
+    </paciente>
 </pacientes>
