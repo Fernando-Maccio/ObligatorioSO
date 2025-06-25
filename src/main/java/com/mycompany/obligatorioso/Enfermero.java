@@ -4,6 +4,7 @@
  */
 package com.mycompany.obligatorioso;
 
+import static com.mycompany.obligatorioso.ExportadorCSV.entradas;
 import static com.mycompany.obligatorioso.ObligatorioSO.enfermeros;
 import static com.mycompany.obligatorioso.ObligatorioSO.horaActual;
 import static com.mycompany.obligatorioso.ObligatorioSO.semaforoEnfermeros;
@@ -51,6 +52,7 @@ public class Enfermero extends Thread {
             Thread.sleep(100);
         }
         System.out.println("El enfermero " + nombre + " termino de atender a " + pacienteActual.getNombre() + " a las " + horaActual.toString());
+        entradas.add(new EntradaCSV(pacienteActual.getNombre(), pacienteActual.getHoraLlegada(), pacienteActual.getTipoAtencion(), horaActual, "Atendido por el enfermero " + nombre));
         enfermeros.add(this);
         semaforoEnfermeros.release();
         atendiendo = false;

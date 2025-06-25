@@ -4,6 +4,7 @@
  */
 package com.mycompany.obligatorioso;
 
+import static com.mycompany.obligatorioso.ExportadorCSV.entradas;
 import static com.mycompany.obligatorioso.ObligatorioSO.enfermeros;
 import static com.mycompany.obligatorioso.ObligatorioSO.horaActual;
 import static com.mycompany.obligatorioso.ObligatorioSO.recepcionista;
@@ -42,11 +43,13 @@ public class Medico extends Thread {
                     } else {
                         if("Carnet de Salud".equals(pacienteActual.getTipoAtencion()) && !pacienteActual.hasInformeOdontologico()) {
                             System.out.println(pacienteActual.getNombre() + " no trajo informe odontologico");
+                            entradas.add(new EntradaCSV(pacienteActual.getNombre(), pacienteActual.getHoraLlegada(), pacienteActual.getTipoAtencion(), horaActual, "No trajo informe odontologico"));
                         } else {
                             while(horaActual.isBefore(horaFinAtencion)){
                                 Thread.sleep(100);
                             }
                             System.out.println("El medico " + nombre + " termino de atender a " + pacienteActual.getNombre() + " a las " + horaActual.toString());
+                            entradas.add(new EntradaCSV(pacienteActual.getNombre(), pacienteActual.getHoraLlegada(), pacienteActual.getTipoAtencion(), horaActual, "Atendido por el medico " + nombre));
                         }
                         semaforoEnfermeros.release();
                     }

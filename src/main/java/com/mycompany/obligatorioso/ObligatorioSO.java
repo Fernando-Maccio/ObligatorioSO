@@ -4,6 +4,7 @@
 
 package com.mycompany.obligatorioso;
 
+import static com.mycompany.obligatorioso.ExportadorCSV.entradas;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.concurrent.Semaphore;
@@ -28,7 +29,9 @@ public class ObligatorioSO {
         recepcionista.abrirCentro();
         
         medicos.add(new Medico("primer medico"));
+        medicos.add(new Medico("segundo medico"));
         enfermeros.add(new Enfermero("primer enfermero"));
+        enfermeros.add(new Enfermero("segundo enfermero"));
         
         semaforoEnfermeros  = new Semaphore(enfermeros.size());
         
@@ -47,7 +50,9 @@ public class ObligatorioSO {
                 medicos = new ArrayList<>();
                 enfermeros = new ArrayList<>();
                 medicos.add(new Medico("tercer medico"));
+                medicos.add(new Medico("cuarto medico"));
                 enfermeros.add(new Enfermero("tercer enfermero"));
+                enfermeros.add(new Enfermero("cuarto enfermero"));
                 
                 for (Medico medico : medicos) {
                     medico.start();
@@ -57,5 +62,13 @@ public class ObligatorioSO {
                 }
             }
         }
+        
+        ArrayList<Paciente> pacientesSinAtender = new ArrayList<>(colaEmergencias);
+        pacientesSinAtender.addAll(colaConsultas);
+        for (Paciente paciente : pacientesSinAtender) {
+            System.out.println("No se pudo atender a" + paciente.getNombre());
+            entradas.add(new EntradaCSV(paciente.getNombre(), paciente.getHoraLlegada(), paciente.getTipoAtencion(), horaActual, "No fue atendido"));
+        }
+        ExportadorCSV.exportarPacientes();
     }
 }

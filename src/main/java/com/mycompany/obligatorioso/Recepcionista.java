@@ -4,6 +4,7 @@
  */
 package com.mycompany.obligatorioso;
 
+import static com.mycompany.obligatorioso.ExportadorCSV.entradas;
 import static com.mycompany.obligatorioso.ObligatorioSO.colaConsultas;
 import static com.mycompany.obligatorioso.ObligatorioSO.colaEmergencias;
 import static com.mycompany.obligatorioso.ObligatorioSO.horaActual;
@@ -100,6 +101,7 @@ public class Recepcionista {
             if (p.getHoraLlegada().equals(horaActual)) {
                 if ("Odontologia".equals(p.getTipoAtencion())) {
                     System.out.println(p.getNombre() + " enviado al odontologo");
+                    entradas.add(new EntradaCSV(p.getNombre(), p.getHoraLlegada(), p.getTipoAtencion(), horaActual, "Enviado al odontologo"));
                 } else colaEmergencias.add(p);
             }
         });
@@ -107,6 +109,7 @@ public class Recepcionista {
             if (p.getHoraLlegada().equals(horaActual)) {
                 if ("Odontologia".equals(p.getTipoAtencion())) {
                     System.out.println(p.getNombre() + " enviado al odontologo");
+                    entradas.add(new EntradaCSV(p.getNombre(), p.getHoraLlegada(), p.getTipoAtencion(), horaActual, "Enviado al odontologo"));
                 } else colaConsultas.add(p);
             }
         });
