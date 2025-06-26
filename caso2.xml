@@ -85,9 +85,63 @@
         <horaLlegada>09:00</horaLlegada>
     </paciente>
     <paciente>
-        <nombre>Gabriela Funes</nombre>
+        <nombre>Carlos Herrera</nombre>
+        <tipoAtencion>Control General</tipoAtencion>
+        <horaLlegada>09:45</horaLlegada>
+    </paciente>
+    <paciente>
+        <nombre>Lucía Fernández</nombre>
+        <tipoAtencion>Control General</tipoAtencion>
+        <horaLlegada>09:45</horaLlegada>
+    </paciente>
+    <paciente>
+        <nombre>Andrés Gómez</nombre>
+        <tipoAtencion>Analisis Clinico</tipoAtencion>
+        <horaLlegada>09:45</horaLlegada>
+    </paciente>
+    <paciente>
+        <nombre>Valeria Sánchez</nombre>
+        <tipoAtencion>Analisis Clinico</tipoAtencion>
+        <horaLlegada>09:45</horaLlegada>
+    </paciente>
+    <paciente>
+        <nombre>Martín Ramírez</nombre>
+        <tipoAtencion>Control General</tipoAtencion>
+        <horaLlegada>09:45</horaLlegada>
+    </paciente>
+    <paciente>
+        <nombre>Camila Ortega</nombre>
+        <tipoAtencion>Analisis Clinico</tipoAtencion>
+        <horaLlegada>09:45</horaLlegada>
+    </paciente>
+    <paciente>
+        <nombre>Diego Molina</nombre>
         <tipoAtencion>Emergencia</tipoAtencion>
-        <horaLlegada>10:30</horaLlegada>
+        <horaLlegada>10:00</horaLlegada>
+        <prioridadInicial>3</prioridadInicial>
+    </paciente>
+    <paciente>
+        <nombre>Elena Ríos</nombre>
+        <tipoAtencion>Emergencia</tipoAtencion>
+        <horaLlegada>10:00</horaLlegada>
+        <prioridadInicial>3</prioridadInicial>
+    </paciente>
+    <paciente>
+        <nombre>Javier Castro</nombre>
+        <tipoAtencion>Emergencia</tipoAtencion>
+        <horaLlegada>10:00</horaLlegada>
+        <prioridadInicial>3</prioridadInicial>
+    </paciente>
+    <paciente>
+        <nombre>Sofía Vargas</nombre>
+        <tipoAtencion>Emergencia</tipoAtencion>
+        <horaLlegada>10:00</horaLlegada>
+        <prioridadInicial>3</prioridadInicial>
+    </paciente>
+    <paciente>
+        <nombre>Mateo Navarro</nombre>
+        <tipoAtencion>Emergencia</tipoAtencion>
+        <horaLlegada>10:00</horaLlegada>
         <prioridadInicial>3</prioridadInicial>
     </paciente>
     <paciente>
@@ -241,6 +295,31 @@
         <nombre>Lucía Peralta</nombre>
         <tipoAtencion>Control General</tipoAtencion>
         <horaLlegada>19:30</horaLlegada>
+    </paciente>
+    <paciente>
+        <nombre>Gonzalo Paredes</nombre>
+        <tipoAtencion>Analisis Clinico</tipoAtencion>
+        <horaLlegada>19:45</horaLlegada>
+    </paciente>
+    <paciente>
+        <nombre>Gonzalo Paredes</nombre>
+        <tipoAtencion>Control General</tipoAtencion>
+        <horaLlegada>19:45</horaLlegada>
+    </paciente>
+    <paciente>
+        <nombre>Gonzalo Paredes</nombre>
+        <tipoAtencion>Analisis Clinico</tipoAtencion>
+        <horaLlegada>19:45</horaLlegada>
+    </paciente>
+    <paciente>
+        <nombre>Gonzalo Paredes</nombre>
+        <tipoAtencion>Analisis Clinico</tipoAtencion>
+        <horaLlegada>19:45</horaLlegada>
+    </paciente>
+    <paciente>
+        <nombre>Gonzalo Paredes</nombre>
+        <tipoAtencion>Control General</tipoAtencion>
+        <horaLlegada>19:45</horaLlegada>
     </paciente>
     <paciente>
         <nombre>Gonzalo Paredes</nombre>
