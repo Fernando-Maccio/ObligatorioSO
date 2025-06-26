@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pacientes>
+    <paciente>
+        <nombre>Fernando Maccio</nombre>
+        <tipoAtencion>Emergencia</tipoAtencion>
+        <horaLlegada>08:00</horaLlegada>
+        <prioridadInicial>1</prioridadInicial>
+    </paciente>
+    <paciente>
+        <nombre>Franco Manfredi</nombre>
+        <tipoAtencion>Control General</tipoAtencion>
+        <horaLlegada>08:00</horaLlegada>
+    </paciente>
+    <paciente>
+        <nombre>Facundo Rosales</nombre>
+        <tipoAtencion>Odontologia</tipoAtencion>
+        <horaLlegada>08:00</horaLlegada>
+    </paciente>
+    <paciente>
+        <nombre>Juan Perez</nombre>
+        <tipoAtencion>Analisis Clinico</tipoAtencion>
+        <horaLlegada>08:00</horaLlegada>
+    </paciente>
+    <paciente>
+        <nombre>Lucía Vargas</nombre>
+        <tipoAtencion>Emergencia</tipoAtencion>
+        <horaLlegada>08:15</horaLlegada>
+        <prioridadInicial>2</prioridadInicial>
+    </paciente>
+    <paciente>
+        <nombre>Martín Gómez</nombre>
+        <tipoAtencion>Control General</tipoAtencion>
+        <horaLlegada>08:15</horaLlegada>
+    </paciente>
+    <paciente>
+        <nombre>Ana Torres</nombre>
+        <tipoAtencion>Odontologia</tipoAtencion>
+        <horaLlegada>08:15</horaLlegada>
+    </paciente>
+    <paciente>
+        <nombre>Diego Ruiz</nombre>
+        <tipoAtencion>Analisis Clinico</tipoAtencion>
+        <horaLlegada>08:15</horaLlegada>
+    </paciente>
+    <paciente>
+        <nombre>Laura Silva</nombre>
+        <tipoAtencion>Emergencia</tipoAtencion>
+        <horaLlegada>09:00</horaLlegada>
+        <prioridadInicial>2</prioridadInicial>
+    </paciente>
+    <paciente>
+        <nombre>Nicolás López</nombre>
+        <tipoAtencion>Control General</tipoAtencion>
+        <horaLlegada>09:00</horaLlegada>
+    </paciente>
+    <paciente>
+        <nombre>María Benítez</nombre>
+        <tipoAtencion>Odontologia</tipoAtencion>
+        <horaLlegada>09:00</horaLlegada>
+    </paciente>
+    <paciente>
+        <nombre>Camila Herrera</nombre>
+        <tipoAtencion>Analisis Clinico</tipoAtencion>
+        <horaLlegada>09:00</horaLlegada>
+    </paciente>
+    <paciente>
+        <nombre>Ramiro Ortega</nombre>
+        <tipoAtencion>Emergencia</tipoAtencion>
+        <horaLlegada>09:00</horaLlegada>
+        <prioridadInicial>1</prioridadInicial>
+    </paciente>
+    <paciente>
+        <nombre>Sofía Álvarez</nombre>
+        <tipoAtencion>Control General</tipoAtencion>
+        <horaLlegada>09:00</horaLlegada>
+    </paciente>
+    <paciente>
+        <nombre>Pedro Sánchez</nombre>
+        <tipoAtencion>Odontologia</tipoAtencion>
+        <horaLlegada>09:00</horaLlegada>
+    </paciente>
+    <paciente>
+        <nombre>Julieta Castro</nombre>
+        <tipoAtencion>Analisis Clinico</tipoAtencion>
+        <horaLlegada>09:00</horaLlegada>
+    </paciente>
+    <paciente>
+        <nombre>Gabriela Funes</nombre>
+        <tipoAtencion>Emergencia</tipoAtencion>
+        <horaLlegada>10:30</horaLlegada>
+        <prioridadInicial>3</prioridadInicial>
+    </paciente>
+    <paciente>
+        <nombre>Leandro Díaz</nombre>
+        <tipoAtencion>Control General</tipoAtencion>
+        <horaLlegada>10:30</horaLlegada>
+    </paciente>
+    <paciente>
+        <nombre>Victoria Ramírez</nombre>
+        <tipoAtencion>Odontologia</tipoAtencion>
+        <horaLlegada>10:30</horaLlegada>
+    </paciente>
+    <paciente>
+        <nombre>Héctor Bustos</nombre>
+        <tipoAtencion>Analisis Clinico</tipoAtencion>
+        <horaLlegada>10:30</horaLlegada>
+    </paciente>
+    <paciente>
+        <nombre>Mario López</nombre>
+        <tipoAtencion>Emergencia</tipoAtencion>
+        <horaLlegada>08:15</horaLlegada>
+        <prioridadInicial>2</prioridadInicial>
+    </paciente>
+    <paciente>
+        <nombre>Romina Ayala</nombre>
+        <tipoAtencion>Control General</tipoAtencion>
+        <horaLlegada>08:15</horaLlegada>
+    </paciente>
+    <paciente>
+        <nombre>Carlos Medina</nombre>
+        <tipoAtencion>Odontologia</tipoAtencion>
+        <horaLlegada>08:15</horaLlegada>
+    </paciente>
+    <paciente>
+        <nombre>Florencia Díaz</nombre>
+        <tipoAtencion>Analisis Clinico</tipoAtencion>
+        <horaLlegada>08:15</horaLlegada>
+    </paciente>
+    <paciente>
+        <nombre>Oscar Albornoz</nombre>
+        <tipoAtencion>Emergencia</tipoAtencion>
+        <horaLlegada>11:00</horaLlegada>
+        <prioridadInicial>1</prioridadInicial>
+    </paciente>
+    <paciente>
+        <nombre>Paula Suárez</nombre>
+        <tipoAtencion>Control General</tipoAtencion>
+        <horaLlegada>11:30</horaLlegada>
+    </paciente>
+    <paciente>
+        <nombre>Silvia Torres</nombre>
+        <tipoAtencion>Odontologia</tipoAtencion>
+        <horaLlegada>12:00</horaLlegada>
+    </paciente>
+    <paciente>
+        <nombre>Claudio Herrera</nombre>
+        <tipoAtencion>Analisis Clinico</tipoAtencion>
+        <horaLlegada>12:30</horaLlegada>
+    </paciente>
+    <paciente>
+        <nombre>Luis Cabrera</nombre>
+        <tipoAtencion>Emergencia</tipoAtencion>
+        <horaLlegada>13:00</horaLlegada>
+        <prioridadInicial>3</prioridadInicial>
+    </paciente>
+    <paciente>
+        <nombre>Marcela Quiroga</nombre>
+        <tipoAtencion>Control General</tipoAtencion>
+        <horaLlegada>13:15</horaLlegada>
+    </paciente>
+    <paciente>
+        <nombre>Diego Acosta</nombre>
+        <tipoAtencion>Odontologia</tipoAtencion>
+        <horaLlegada>13:30</horaLlegada>
+    </paciente>
+    <paciente>
+        <nombre>Andrea Molina</nombre>
+        <tipoAtencion>Analisis Clinico</tipoAtencion>
+        <horaLlegada>13:45</horaLlegada>
+    </paciente>
+    <paciente>
+        <nombre>Marta Sosa</nombre>
+        <tipoAtencion>Emergencia</tipoAtencion>
+        <horaLlegada>14:00</horaLlegada>
+        <prioridadInicial>2</prioridadInicial>
+    </paciente>
+    <paciente>
+        <nombre>Cristian Romero</nombre>
+        <tipoAtencion>Control General</tipoAtencion>
+        <horaLlegada>14:15</horaLlegada>
+    </paciente>
+    <paciente>
+        <nombre>Agustina Peña</nombre>
+        <tipoAtencion>Odontologia</tipoAtencion>
+        <horaLlegada>14:30</horaLlegada>
+    </paciente>
+    <paciente>
+        <nombre>Daniel Villalba</nombre>
+        <tipoAtencion>Analisis Clinico</tipoAtencion>
+        <horaLlegada>14:45</horaLlegada>
+    </paciente>
+    <paciente>
+        <nombre>Esteban Ledesma</nombre>
+        <tipoAtencion>Emergencia</tipoAtencion>
+        <horaLlegada>15:00</horaLlegada>
+        <prioridadInicial>1</prioridadInicial>
+    </paciente>
+    <paciente>
+        <nombre>Valeria Gómez</nombre>
+        <tipoAtencion>Control General</tipoAtencion>
+        <horaLlegada>15:00</horaLlegada>
+    </paciente>
+    <paciente>
+        <nombre>Erika Nieto</nombre>
+        <tipoAtencion>Odontologia</tipoAtencion>
+        <horaLlegada>15:00</horaLlegada>
+    </paciente>
+    <paciente>
+        <nombre>Federico Alonso</nombre>
+        <tipoAtencion>Analisis Clinico</tipoAtencion>
+        <horaLlegada>15:00</horaLlegada>
+    </paciente>
+    <paciente>
+        <nombre>Joaquín Vera</nombre>
+        <tipoAtencion>Emergencia</tipoAtencion>
+        <horaLlegada>16:30</horaLlegada>
+        <prioridadInicial>1</prioridadInicial>
+    </paciente>
+    <paciente>
+        <nombre>Milagros Ortega</nombre>
+        <tipoAtencion>Control General</tipoAtencion>
+        <horaLlegada>17:00</horaLlegada>
+    </paciente>
+    <paciente>
+        <nombre>Luciano Campos</nombre>
+        <tipoAtencion>Odontologia</tipoAtencion>
+        <horaLlegada>17:30</horaLlegada>
+    </paciente>
+    <paciente>
+        <nombre>Rocío Navarro</nombre>
+        <tipoAtencion>Analisis Clinico</tipoAtencion>
+        <horaLlegada>18:00</horaLlegada>
+    </paciente>
+    <paciente>
+        <nombre>Bruno Salazar</nombre>
+        <tipoAtencion>Emergencia</tipoAtencion>
+        <horaLlegada>19:00</horaLlegada>
+        <prioridadInicial>3</prioridadInicial>
+    </paciente>
+    <paciente>
+        <nombre>Lucía Peralta</nombre>
+        <tipoAtencion>Control General</tipoAtencion>
+        <horaLlegada>19:30</horaLlegada>
+    </paciente>
+    <paciente>
+        <nombre>Gonzalo Paredes</nombre>
+        <tipoAtencion>Odontologia</tipoAtencion>
+        <horaLlegada>20:00</horaLlegada>
+    </paciente>
+    <paciente>
+        <nombre>Verónica Jiménez</nombre>
+        <tipoAtencion>Analisis Clinico</tipoAtencion>
+        <horaLlegada>20:00</horaLlegada>
+    </paciente>
+    <paciente>
+        <nombre>Elena Martínez</nombre>
+        <tipoAtencion>Carnet de Salud</tipoAtencion>
+        <horaLlegada>08:45</horaLlegada>
+        <informeOdontologico>True</informeOdontologico>
+    </paciente>
+    <paciente>
+        <nombre>Diego Fernández</nombre>
+        <tipoAtencion>Carnet de Salud</tipoAtencion>
+        <horaLlegada>10:15</horaLlegada>
+        <informeOdontologico>False</informeOdontologico>
+    </paciente>
+    <paciente>
+        <nombre>Camila Ríos</nombre>
+        <tipoAtencion>Carnet de Salud</tipoAtencion>
+        <horaLlegada>11:45</horaLlegada>
+    </paciente>
+    <paciente>
+        <nombre>Juanita López</nombre>
+        <tipoAtencion>Carnet de Salud</tipoAtencion>
+        <horaLlegada>13:00</horaLlegada>
+        <informeOdontologico>True</informeOdontologico>
+    </paciente>
+    <paciente>
+        <nombre>Iván Cabrera</nombre>
+        <tipoAtencion>Carnet de Salud</tipoAtencion>
+        <horaLlegada>15:30</horaLlegada>
+    </paciente>
+</pacientes>
