@@ -14,14 +14,16 @@ public class EntradaCSV {
     private final String nombre;
     private final LocalTime horaLlegada;
     private final String tipoAtencion;
+    private final LocalTime horaAtencion;
     private final LocalTime horaSalida;
     private final String mensaje;
     
     
-    public EntradaCSV(String nombre, LocalTime horaLlegada, String tipoAtencion, LocalTime horaSalida, String mensaje) {
+    public EntradaCSV(String nombre, LocalTime horaLlegada, String tipoAtencion, LocalTime horaAtencion, LocalTime horaSalida, String mensaje) {
         this.nombre = nombre;
         this.horaLlegada = horaLlegada;
         this.tipoAtencion = tipoAtencion;
+        this.horaAtencion = horaAtencion;
         this.horaSalida = horaSalida;
         this.mensaje = mensaje;
     }
@@ -36,6 +38,10 @@ public class EntradaCSV {
     
     public String getTipoAtencion() {
         return tipoAtencion;
+    }
+    
+    public String getHoraAtencion(){
+        return horaAtencion == null ? "" : horaAtencion.toString();
     }
     
     public String getHoraSalida(){

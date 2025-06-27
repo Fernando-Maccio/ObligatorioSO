@@ -11,12 +11,13 @@ public class ExportadorCSV {
         String rutaArchivo = "datos_simulacion.csv";
         try (FileWriter writer = new FileWriter(rutaArchivo)) {
 
-            writer.append("Nombre,Hora de Llegada,Tipo de Atención,Hora de Salida,Mensaje\n");
+            writer.append("Nombre,Hora de Llegada,Tipo de Atención,Hora de Atencion,Hora de Salida,Mensaje\n");
 
             for (EntradaCSV e : entradas) {
                 writer.append(e.getNombre()).append(",")
                       .append(e.getHoraLlegada()).append(",")
                       .append(e.getTipoAtencion()).append(",")
+                      .append(e.getHoraAtencion()).append(",")
                       .append(e.getHoraSalida()).append(",")
                       .append(e.getMensaje()).append("\n");
             }

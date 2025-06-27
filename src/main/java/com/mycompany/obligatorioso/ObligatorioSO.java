@@ -29,9 +29,9 @@ public class ObligatorioSO {
         recepcionista.abrirCentro();
         
         medicos.add(new Medico("primer medico"));
-        medicos.add(new Medico("segundo medico"));
+        // medicos.add(new Medico("segundo medico"));
         enfermeros.add(new Enfermero("primer enfermero"));
-        enfermeros.add(new Enfermero("segundo enfermero"));
+        //enfermeros.add(new Enfermero("segundo enfermero"));
         
         semaforoEnfermeros  = new Semaphore(enfermeros.size());
         
@@ -41,18 +41,18 @@ public class ObligatorioSO {
         for (Enfermero enfermero : enfermeros) {
             enfermero.start();
         }
-        while(horaActual.isBefore(LocalTime.of(20, 0))) {
+        while(horaActual.plusMinutes(1).isBefore(LocalTime.of(20, 0)) || medicos.stream().anyMatch(Thread::isAlive)) {
             recepcionista.ingresarPacientes();
             System.out.println(horaActual);
-            Thread.sleep(500);
+            Thread.sleep(50);
             horaActual = horaActual.plusMinutes(5);
             if (horaActual.equals(LocalTime.of(14, 0))) {
                 medicos = new ArrayList<>();
                 enfermeros = new ArrayList<>();
                 medicos.add(new Medico("tercer medico"));
-                medicos.add(new Medico("cuarto medico"));
+                // medicos.add(new Medico("cuarto medico"));
                 enfermeros.add(new Enfermero("tercer enfermero"));
-                enfermeros.add(new Enfermero("cuarto enfermero"));
+                // enfermeros.add(new Enfermero("cuarto enfermero"));
                 
                 for (Medico medico : medicos) {
                     medico.start();
@@ -67,8 +67,9 @@ public class ObligatorioSO {
         pacientesSinAtender.addAll(colaConsultas);
         for (Paciente paciente : pacientesSinAtender) {
             System.out.println("No se pudo atender a" + paciente.getNombre());
-            entradas.add(new EntradaCSV(paciente.getNombre(), paciente.getHoraLlegada(), paciente.getTipoAtencion(), horaActual, "No fue atendido"));
+            entradas.add(new EntradaCSV(paciente.getNombre(), paciente.getHoraLlegada(), paciente.getTipoAtencion(), null, horaActual, "No fue atendido"));
         }
+        Thread.sleep(100);
         ExportadorCSV.exportarPacientes();
     }
 }

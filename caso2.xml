@@ -303,7 +303,7 @@
     </paciente>
     <paciente>
         <nombre>Gonzalo Paredes</nombre>
-        <tipoAtencion>Control General</tipoAtencion>
+        <tipoAtencion>Analisis Clinico</tipoAtencion>
         <horaLlegada>19:45</horaLlegada>
     </paciente>
     <paciente>

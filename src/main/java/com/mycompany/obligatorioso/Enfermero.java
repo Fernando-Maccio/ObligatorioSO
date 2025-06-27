@@ -32,7 +32,7 @@ public class Enfermero extends Thread {
         System.out.println("Comenzo a trabajar: " + nombre);
         while(horaActual.isBefore(horaEntrada.plusHours(6)) || atendiendo) {
             try {
-                Thread.sleep(100);
+                Thread.sleep(10);
             } catch (InterruptedException ex) {
                 Logger.getLogger(Enfermero.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -49,10 +49,10 @@ public class Enfermero extends Thread {
         semaforoSalaEnfermeria.acquire();
         atendiendo = true;
         while(horaActual.isBefore(horaFinAtencion)){
-            Thread.sleep(100);
+            Thread.sleep(10);
         }
         System.out.println("El enfermero " + nombre + " termino de atender a " + pacienteActual.getNombre() + " a las " + horaActual.toString());
-        entradas.add(new EntradaCSV(pacienteActual.getNombre(), pacienteActual.getHoraLlegada(), pacienteActual.getTipoAtencion(), horaActual, "Atendido por el enfermero " + nombre));
+        entradas.add(new EntradaCSV(pacienteActual.getNombre(), pacienteActual.getHoraLlegada(), pacienteActual.getTipoAtencion(), horaActual.minusMinutes(pacienteActual.getTiempoAtencion()),horaActual, "Atendido por el enfermero " + nombre));
         enfermeros.add(this);
         semaforoEnfermeros.release();
         atendiendo = false;

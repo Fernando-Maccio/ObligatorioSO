@@ -29,7 +29,7 @@ public class Recepcionista {
 
     public void abrirCentro() {
         try {
-            File archivo = new File("pacientes.xml");
+            File archivo = new File("caso2.xml");
 
             DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
             DocumentBuilder db = dbf.newDocumentBuilder();
@@ -101,7 +101,7 @@ public class Recepcionista {
             if (p.getHoraLlegada().equals(horaActual)) {
                 if ("Odontologia".equals(p.getTipoAtencion())) {
                     System.out.println(p.getNombre() + " enviado al odontologo");
-                    entradas.add(new EntradaCSV(p.getNombre(), p.getHoraLlegada(), p.getTipoAtencion(), horaActual, "Enviado al odontologo"));
+                    entradas.add(new EntradaCSV(p.getNombre(), p.getHoraLlegada(), p.getTipoAtencion(), null, horaActual, "Enviado al odontologo"));
                 } else colaEmergencias.add(p);
             }
         });
@@ -109,7 +109,7 @@ public class Recepcionista {
             if (p.getHoraLlegada().equals(horaActual)) {
                 if ("Odontologia".equals(p.getTipoAtencion())) {
                     System.out.println(p.getNombre() + " enviado al odontologo");
-                    entradas.add(new EntradaCSV(p.getNombre(), p.getHoraLlegada(), p.getTipoAtencion(), horaActual, "Enviado al odontologo"));
+                    entradas.add(new EntradaCSV(p.getNombre(), p.getHoraLlegada(), p.getTipoAtencion(), null, horaActual, "Enviado al odontologo"));
                 } else colaConsultas.add(p);
             }
         });

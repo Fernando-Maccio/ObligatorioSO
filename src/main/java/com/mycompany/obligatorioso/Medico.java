@@ -43,13 +43,13 @@ public class Medico extends Thread {
                     } else {
                         if("Carnet de Salud".equals(pacienteActual.getTipoAtencion()) && !pacienteActual.hasInformeOdontologico()) {
                             System.out.println(pacienteActual.getNombre() + " no trajo informe odontologico");
-                            entradas.add(new EntradaCSV(pacienteActual.getNombre(), pacienteActual.getHoraLlegada(), pacienteActual.getTipoAtencion(), horaActual, "No trajo informe odontologico"));
+                            entradas.add(new EntradaCSV(pacienteActual.getNombre(), pacienteActual.getHoraLlegada(), pacienteActual.getTipoAtencion(), null, horaActual, "No trajo informe odontologico"));
                         } else {
                             while(horaActual.isBefore(horaFinAtencion)){
-                                Thread.sleep(100);
+                                Thread.sleep(10);
                             }
                             System.out.println("El medico " + nombre + " termino de atender a " + pacienteActual.getNombre() + " a las " + horaActual.toString());
-                            entradas.add(new EntradaCSV(pacienteActual.getNombre(), pacienteActual.getHoraLlegada(), pacienteActual.getTipoAtencion(), horaActual, "Atendido por el medico " + nombre));
+                            entradas.add(new EntradaCSV(pacienteActual.getNombre(), pacienteActual.getHoraLlegada(), pacienteActual.getTipoAtencion(), horaActual.minusMinutes(pacienteActual.getTiempoAtencion()), horaActual, "Atendido por el medico " + nombre));
                         }
                         semaforoEnfermeros.release();
                     }
