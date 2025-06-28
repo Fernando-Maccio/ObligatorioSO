@@ -41,7 +41,7 @@ public class ObligatorioSO {
         for (Enfermero enfermero : enfermeros) {
             enfermero.start();
         }
-        while(horaActual.plusMinutes(1).isBefore(LocalTime.of(20, 0)) || medicos.stream().anyMatch(Thread::isAlive)) {
+        while(horaActual.plusMinutes(1).isBefore(LocalTime.of(20, 0))) {
             recepcionista.ingresarPacientes();
             System.out.println(horaActual);
             Thread.sleep(50);
@@ -62,12 +62,16 @@ public class ObligatorioSO {
                 }
             }
         }
-        
         ArrayList<Paciente> pacientesSinAtender = new ArrayList<>(colaEmergencias);
         pacientesSinAtender.addAll(colaConsultas);
         for (Paciente paciente : pacientesSinAtender) {
             System.out.println("No se pudo atender a" + paciente.getNombre());
             entradas.add(new EntradaCSV(paciente.getNombre(), paciente.getHoraLlegada(), paciente.getTipoAtencion(), null, horaActual, "No fue atendido"));
+        }
+        while(medicos.stream().anyMatch(Thread::isAlive)) {
+            System.out.println(horaActual);
+            Thread.sleep(50);
+            horaActual = horaActual.plusMinutes(5);
         }
         Thread.sleep(100);
         ExportadorCSV.exportarPacientes();
