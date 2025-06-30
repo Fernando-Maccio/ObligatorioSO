@@ -14,52 +14,84 @@ Diego Ruiz,08:15,Analisis Clinico,09:05,09:15,Atendido por el enfermero primer e
 Romina Ayala,08:15,Control General,09:15,09:20,Atendido por el medico primer medico
 Florencia Díaz,08:15,Analisis Clinico,09:20,09:30,Atendido por el enfermero primer enfermero
 Elena Martínez,08:45,Carnet de Salud,09:30,09:40,Atendido por el medico primer medico
+Gustavo Fernández,09:50,Odontologia,,09:50,Enviado al odontologo
 Laura Silva,09:00,Emergencia,09:40,09:55,Atendido por el medico primer medico
 Nicolás López,09:00,Control General,09:55,10:00,Atendido por el medico primer medico
 Camila Herrera,09:00,Analisis Clinico,10:00,10:10,Atendido por el enfermero primer enfermero
 Ramiro Ortega,09:00,Emergencia,10:10,10:25,Atendido por el medico primer medico
 Victoria Ramírez,10:30,Odontologia,,10:30,Enviado al odontologo
 Sofía Álvarez,09:00,Control General,10:25,10:30,Atendido por el medico primer medico
+Melina Duarte,10:35,Odontologia,,10:35,Enviado al odontologo
 Julieta Castro,09:00,Analisis Clinico,10:30,10:40,Atendido por el enfermero primer enfermero
-Diego Molina,10:00,Emergencia,10:40,10:55,Atendido por el medico primer medico
-Elena Ríos,10:00,Emergencia,10:55,11:10,Atendido por el medico primer medico
-Javier Castro,10:00,Emergencia,11:10,11:25,Atendido por el medico primer medico
-Sofía Vargas,10:00,Emergencia,11:25,11:40,Atendido por el medico primer medico
-Mateo Navarro,10:00,Emergencia,11:40,11:55,Atendido por el medico primer medico
+Martina Cabrera,09:40,Control General,10:40,10:45,Atendido por el medico primer medico
+Diego Molina,10:00,Emergencia,10:45,11:00,Atendido por el medico primer medico
+Elena Ríos,10:00,Emergencia,11:00,11:15,Atendido por el medico primer medico
+Isabel Correa,11:25,Odontologia,,11:25,Enviado al odontologo
+Javier Castro,10:00,Emergencia,11:15,11:30,Atendido por el medico primer medico
+Sofía Vargas,10:00,Emergencia,11:30,11:45,Atendido por el medico primer medico
 Silvia Torres,12:00,Odontologia,,12:00,Enviado al odontologo
-Carlos Herrera,09:45,Control General,11:55,12:00,Atendido por el medico primer medico
-Lucía Fernández,09:45,Control General,12:00,12:05,Atendido por el medico primer medico
-Andrés Gómez,09:45,Analisis Clinico,12:05,12:15,Atendido por el enfermero primer enfermero
-Valeria Sánchez,09:45,Analisis Clinico,12:15,12:25,Atendido por el enfermero primer enfermero
-Martín Ramírez,09:45,Control General,12:25,12:30,Atendido por el medico primer medico
-Camila Ortega,09:45,Analisis Clinico,12:30,12:40,Atendido por el enfermero primer enfermero
-Diego Fernández,10:15,Carnet de Salud,,12:40,No trajo informe odontologico
-Leandro Díaz,10:30,Control General,12:40,12:45,Atendido por el medico primer medico
-Héctor Bustos,10:30,Analisis Clinico,12:45,12:55,Atendido por el enfermero primer enfermero
-Oscar Albornoz,11:00,Emergencia,12:55,13:10,Atendido por el medico primer medico
-Paula Suárez,11:30,Control General,13:10,13:15,Atendido por el medico primer medico
-Camila Ríos,11:45,Carnet de Salud,,13:15,No trajo informe odontologico
-Claudio Herrera,12:30,Analisis Clinico,13:15,13:25,Atendido por el enfermero primer enfermero
+Mateo Navarro,10:00,Emergencia,11:45,12:00,Atendido por el medico primer medico
+Carlos Herrera,09:45,Control General,12:00,12:05,Atendido por el medico primer medico
+Lucía Fernández,09:45,Control General,12:05,12:10,Atendido por el medico primer medico
+Andrés Gómez,09:45,Analisis Clinico,12:10,12:20,Atendido por el enfermero primer enfermero
+Valeria Sánchez,09:45,Analisis Clinico,12:20,12:30,Atendido por el enfermero primer enfermero
+Martín Ramírez,09:45,Control General,12:30,12:35,Atendido por el medico primer medico
+Camila Ortega,09:45,Analisis Clinico,12:35,12:45,Atendido por el enfermero primer enfermero
+Julieta Alonso,10:05,Emergencia,12:45,13:00,Atendido por el medico primer medico
+Ramón Suárez,10:10,Analisis Clinico,13:00,13:10,Atendido por el enfermero primer enfermero
+Diego Fernández,10:15,Carnet de Salud,,13:10,No trajo informe odontologico
+Camila Méndez,10:20,Control General,13:10,13:15,Atendido por el medico primer medico
 Diego Acosta,13:30,Odontologia,,13:30,Enviado al odontologo
-Luis Cabrera,13:00,Emergencia,13:25,13:40,Atendido por el medico primer medico
-Juanita López,13:00,Carnet de Salud,13:40,13:50,Atendido por el medico primer medico
-Marcela Quiroga,13:15,Control General,13:50,13:55,Atendido por el medico primer medico
-Andrea Molina,13:45,Analisis Clinico,13:55,14:05,Atendido por el enfermero primer enfermero
-Marta Sosa,14:00,Emergencia,14:05,14:20,Atendido por el medico tercer medico
-Cristian Romero,14:15,Control General,14:20,14:25,Atendido por el medico tercer medico
+Sebastián Viera,10:25,Emergencia,13:15,13:30,Atendido por el medico primer medico
+Leandro Díaz,10:30,Control General,13:30,13:35,Atendido por el medico primer medico
+Héctor Bustos,10:30,Analisis Clinico,13:35,13:45,Atendido por el enfermero primer enfermero
+Lucas Barrios,10:50,Analisis Clinico,13:45,13:55,Atendido por el enfermero primer enfermero
+Oscar Albornoz,11:00,Emergencia,13:55,14:10,Atendido por el medico primer medico
+Eva Gutiérrez,11:05,Control General,14:10,14:15,Atendido por el medico tercer medico
 Agustina Peña,14:30,Odontologia,,14:30,Enviado al odontologo
-Daniel Villalba,14:45,Analisis Clinico,14:45,14:55,Atendido por el enfermero tercer enfermero
+Patricio Ramos,11:15,Emergencia,14:15,14:30,Atendido por el medico tercer medico
+Paula Suárez,11:30,Control General,14:30,14:35,Atendido por el medico tercer medico
+Lorenzo Costa,11:35,Analisis Clinico,14:35,14:45,Atendido por el enfermero tercer enfermero
+Camila Ríos,11:45,Carnet de Salud,,14:45,No trajo informe odontologico
+Agustina Paredes,11:50,Carnet de Salud,,14:45,No trajo informe odontologico
+Claudio Herrera,12:30,Analisis Clinico,14:45,14:55,Atendido por el enfermero tercer enfermero
 Erika Nieto,15:00,Odontologia,,15:00,Enviado al odontologo
-Esteban Ledesma,15:00,Emergencia,15:00,15:15,Atendido por el medico tercer medico
-Valeria Gómez,15:00,Control General,15:15,15:20,Atendido por el medico tercer medico
-Federico Alonso,15:00,Analisis Clinico,15:20,15:30,Atendido por el enfermero tercer enfermero
-Iván Cabrera,15:30,Carnet de Salud,,15:30,No trajo informe odontologico
-Joaquín Vera,16:30,Emergencia,16:30,16:45,Atendido por el medico tercer medico
-Milagros Ortega,17:00,Control General,17:00,17:05,Atendido por el medico tercer medico
+Luis Cabrera,13:00,Emergencia,14:55,15:10,Atendido por el medico tercer medico
+Manuela Ruiz,15:15,Odontologia,,15:15,Enviado al odontologo
+Juanita López,13:00,Carnet de Salud,15:10,15:20,Atendido por el medico tercer medico
+Marcela Quiroga,13:15,Control General,15:20,15:25,Atendido por el medico tercer medico
+Andrea Molina,13:45,Analisis Clinico,15:25,15:35,Atendido por el enfermero tercer enfermero
+Marta Sosa,14:00,Emergencia,15:35,15:50,Atendido por el medico tercer medico
+Cristian Romero,14:15,Control General,15:50,15:55,Atendido por el medico tercer medico
+Julia Martínez,16:00,Odontologia,,16:00,Enviado al odontologo
+Daniel Villalba,14:45,Analisis Clinico,15:55,16:05,Atendido por el enfermero tercer enfermero
+Esteban Ledesma,15:00,Emergencia,16:05,16:20,Atendido por el medico tercer medico
+Valeria Gómez,15:00,Control General,16:20,16:25,Atendido por el medico tercer medico
+Federico Alonso,15:00,Analisis Clinico,16:25,16:35,Atendido por el enfermero tercer enfermero
+Lautaro Acuña,15:15,Analisis Clinico,16:35,16:45,Atendido por el enfermero tercer enfermero
+Renata Torres,17:00,Odontologia,,17:00,Enviado al odontologo
+Soledad Pérez,15:30,Emergencia,16:45,17:00,Atendido por el medico tercer medico
+Iván Cabrera,15:30,Carnet de Salud,,17:00,No trajo informe odontologico
+Rodrigo Sosa,15:45,Control General,17:00,17:05,Atendido por el medico tercer medico
+Brenda Núñez,16:15,Analisis Clinico,17:05,17:15,Atendido por el enfermero tercer enfermero
 Luciano Campos,17:30,Odontologia,,17:30,Enviado al odontologo
-Rocío Navarro,18:00,Analisis Clinico,18:00,18:10,Atendido por el enfermero tercer enfermero
-Bruno Salazar,19:00,Emergencia,19:00,19:15,Atendido por el medico tercer medico
+Joaquín Vera,16:30,Emergencia,17:15,17:30,Atendido por el medico tercer medico
+Ignacio Delgado,16:30,Control General,17:30,17:35,Atendido por el medico tercer medico
+Lorenzo Silva,16:45,Emergencia,17:35,17:50,Atendido por el medico tercer medico
+Milagros Ortega,17:00,Control General,17:50,17:55,Atendido por el medico tercer medico
+Agustín Ferreira,17:15,Analisis Clinico,17:55,18:05,Atendido por el enfermero tercer enfermero
+Emilia Correa,17:30,Control General,18:05,18:10,Atendido por el medico tercer medico
+Santiago Benítez,18:15,Odontologia,,18:15,Enviado al odontologo
+Tobías Domínguez,17:45,Emergencia,18:10,18:25,Atendido por el medico tercer medico
+Rocío Navarro,18:00,Analisis Clinico,18:25,18:35,Atendido por el enfermero tercer enfermero
+Florencia Moreira,18:00,Control General,18:35,18:40,Atendido por el medico tercer medico
+Josefina Godoy,18:30,Analisis Clinico,18:40,18:50,Atendido por el enfermero tercer enfermero
+Luna Barrios,19:00,Odontologia,,19:00,Enviado al odontologo
+Franco Méndez,18:45,Emergencia,18:50,19:05,Atendido por el medico tercer medico
+Bruno Salazar,19:00,Emergencia,19:05,19:20,Atendido por el medico tercer medico
+Mauricio Pérez,19:15,Control General,19:20,19:25,Atendido por el medico tercer medico
 Lucía Peralta,19:30,Control General,19:30,19:35,Atendido por el medico tercer medico
+Camilo Duarte,19:30,Analisis Clinico,19:35,19:45,Atendido por el enfermero tercer enfermero
 Pedro Sanchez,19:45,Analisis Clinico,19:45,19:55,Atendido por el enfermero tercer enfermero
 Lucia Gomez,19:45,Analisis Clinico,,20:00,No fue atendido
 Gaston Eguren,19:45,Analisis Clinico,,20:00,No fue atendido

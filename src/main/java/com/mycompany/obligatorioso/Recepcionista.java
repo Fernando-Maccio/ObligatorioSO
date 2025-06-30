@@ -91,7 +91,8 @@ public class Recepcionista {
                     p.aumentarPrioridad();
                 }
             }
-            if(p.getPrioridad() == 6) {
+            if(p.getPrioridad() == 18) {
+                p.setPrioridad(3);
                 colaEmergencias.add(p);
             }
         });

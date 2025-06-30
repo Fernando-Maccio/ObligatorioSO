@@ -55,6 +55,10 @@ public class Paciente {
         return prioridad;
     }
     
+    public void setPrioridad(int nuevaPrioridad) {
+        prioridad = nuevaPrioridad;
+    }
+    
     public void aumentarPrioridad() {
         this.prioridad += 1;
     }
